@@ -11,6 +11,12 @@ body {
   margin-right: 1rem;
   margin-left: 1rem; }
 
+.grid > * {
+  border: 2px solid #464646;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 10px; }
+
 .navbar {
   display: flex;
   flex-direction: column;
@@ -19,6 +25,11 @@ body {
     .navbar {
       flex-direction: row;
       justify-content: space-between; } }
+  .navbar a {
+    text-align: center; }
+    @media (min-width: 768px) {
+      .navbar a {
+        text-align: left; } }
   .navbar ul {
     display: flex;
     align-items: center;
@@ -41,18 +52,26 @@ body {
       margin-left: 0.5rem; }
 
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10rem;
-  background: #eee; }
+  grid-area: hero; }
 
-.content {
-  display: flex;
-  flex-direction: row; }
+.main {
+  grid-area: main; }
 
-.cta {
-  flex: 2 0 0; }
+.navbar {
+  grid-area: navbar; }
 
-.sections {
-  flex: 1 0 0; }
+.sidebar {
+  grid-area: sidebar; }
+
+.footer {
+  grid-area: footer; }
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas: "navbar" "hero" "main" "sidebar" "footer"; }
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "navbar navbar" "hero   hero" "main   sidebar" "footer footer"; } }
