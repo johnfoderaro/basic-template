@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: $nav-background;
+  border-radius: 4px;
+  @media(min-width: $large-width) {
+    flex-direction: row;    
+    justify-content: space-between;    
+  }
+
+  a {
+    text-align: center;
+    @media(min-width: $large-width) {
+      text-align: left;
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: center;
+    padding-top: 2rem;
+    @media(min-width: $large-width) {
+      justify-content: space-between;    
+      padding-top: 0;      
+    }
+  }
+  li {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    &:first-child {
+      margin-right: 0.5rem;
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      margin-left: 0.5rem;
+    }
+  }
+}
